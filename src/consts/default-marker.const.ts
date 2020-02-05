@@ -13,7 +13,4 @@ export const DEFAULT_MARKER: MarkerAttributes = {
 
 export const DEFAULT_MARKER_PATH: PathAttributes = {
     d: 'M 0 0 L 10 5 L 0 10 z',
-    fill: 'red',
-    class: 'arrow-tip',
-    id: 'jou'
 }

@@ -52,6 +52,6 @@ export interface ArrowSettings {
      * @param {string} id is a valid SVG id that is used as the marker's unique ID
      * @param {SVGMarkerElement} marker is the marker element that will be appended to the SVG's defs
      */
-    markerStart?: (id: string, marker: SVGMarkerElement) => {};
-    markerEnd?: (id: string, marker: SVGMarkerElement) => {};
+    markerStart?: SVGMarkerElement;
+    markerEnd?: SVGMarkerElement;
 }
