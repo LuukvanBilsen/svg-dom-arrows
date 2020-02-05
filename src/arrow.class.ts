@@ -24,7 +24,7 @@ export class Arrow {
 
         const pathArrow = DomUtils.createPathElement({
             d: arrow.points,
-            id: `${className}__${Math.random()}`,
+            id: `${className}__${Math.floor(Math.random() * 100)}`,
             class: `${className}__path`,
         });
         node.svgItem.appendChild(pathArrow);
@@ -70,7 +70,17 @@ export class Arrow {
             defsRef.appendChild(defaultMarker);
             arrowPath.setAttribute('marker-end', `url(#${DEFAULT_MARKER.id})`);
             arrowPath.setAttribute('marker-start', `url(#${DEFAULT_MARKER.id})`);
-            arrowPath.setAttribute('stroke', '#00FF00')
+        } else {
+            if (params.arrowSettings.markerStart) {
+                const markerStart = params.arrowSettings.markerStart;
+                defsRef.appendChild(markerStart);
+                arrowPath.setAttribute('marker-start', `url(#${markerStart.id})`);
+            }
+            if (params.arrowSettings.markerEnd) {
+                const markerEnd = params.arrowSettings.markerEnd;
+                defsRef.appendChild(markerEnd);
+                arrowPath.setAttribute('marker-end', `url(#${markerEnd.id})`);
+            }
         }
     }
 }
