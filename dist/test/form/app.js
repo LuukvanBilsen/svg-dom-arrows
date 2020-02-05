@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
   const arrowProps = JSON.parse(`{
     "className": "arrow",
-    "shapeApparence": "straight-curved",
+    "shapeApparence": "normal",
     "from": {
       "point": {
         "x": 500,
@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
       },
       "direction": "left",
       "translation": [
-        -0.5,
+        0.1,
         -1
       ]
     },

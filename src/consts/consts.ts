@@ -1,3 +1,5 @@
+export const SVG_NS = 'http://www.w3.org/2000/svg';
+
 export const ARROW_HEAD_SIZE = 10;
 
 export const DIRECTION = {
