@@ -1,6 +1,6 @@
 {
   "name": "svg-dom-arrows",
-  "version": "1.0.0",
+  "version": "1.0.0-a2",
   "description": "Draw an SVG arrow between two DOM elements",
   "keywords": [
     "arrow",
@@ -9,6 +9,7 @@
     "DOM"
   ],
   "main": "dist/main.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --no-inline",
