@@ -1,0 +1,11 @@
+.vscode
+docs
+node_modules
+src
+.*
+tsconfig.json
+webpack.config.js
+test
+!dist/src
+dist/index.html
+*.tgz
