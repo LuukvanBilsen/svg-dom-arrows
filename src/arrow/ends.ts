@@ -1,13 +1,16 @@
 import { DIRECTION } from '../consts/consts';
 
-const endNode = (point) => (isFunction(point.node)
-  ? point.node()
-  : point.node
-);
+export class Ends {
+  constructor(point) {
+    return {
+      ...point,
+      ...this.endXY(point),
+    };
+  }
 
-const endXY = (point) => {
-  const rect = endNode(point).getBoundingClientRect();
-  switch (point.direction) {
+  private endXY(point) {
+    const rect = this.endNode(point).getBoundingClientRect();
+    switch (point.direction) {
     case DIRECTION.TOP_LEFT:
       return {
         x: rect.x,
@@ -50,14 +53,14 @@ const endXY = (point) => {
       };
     default:
       throw new Error('unexpected type');
+    }
   }
-};
 
-export const ends = (point) => ({
-  ...point,
-  ...endXY(point),
-});
+  private endNode(point) {
+    return (this.isFunction(point.node) ? point.node() : point.node);
+  }
 
-function isFunction(functionToCheck) {
-  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
- }
+  private isFunction(functionToCheck) {
+    return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+  }
+}

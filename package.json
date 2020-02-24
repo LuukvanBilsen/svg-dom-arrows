@@ -13,7 +13,8 @@
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --no-inline",
     "test": "jest",
-    "lint": "eslint src --fix"
+    "lint": "eslint src/* --fix",
+    "tsbuild": "typescript && typescript -m es6 --outDir lib-esm"
   },
   "repository": {
     "type": "git",
@@ -32,10 +33,18 @@
   "homepage": "https://github.com/tarkant/svg-dom-arrows#readme",
   "devDependencies": {
     "@types/jest": "^25.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
     "awesome-typescript-loader": "^5.2.1",
     "codelyzer": "^5.2.1",
+    "eslint": "^6.8.0",
+    "import": "0.0.6",
     "jest": "^24.9.0",
-    "typescript": "^3.7.5",
+    "rxjs-tslint-rules": "^4.29.0",
+    "terser-webpack-plugin": "^2.3.5",
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.2",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.10.2"
